@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1>قائمة الموظفين الملقحين في الحملة</h1>
+
+    <table id="datatable-checkbox" class="table table-striped bulk_action table-bordered" style="width:100%"    >
+        <thead>
+            <tr>
+               {# <th>Id</th>#}
+                <th>المعرف</th>
+                <th>الإسم</th>
+                <th>اللقب</th>
+                <th>ب.ت.و</th>
+                <th>تاريخ الولادة</th>
+                <th>تاريخ التلقيح</th>
+                <th>رقم التسجيل EVAX</th>
+                <th>إجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for agent_vaccin in agent_vaccins %}
+            <tr>
+                {#<td>{{ agent_vaccin.id }}</td>#}
+                <td>{{ agent_vaccin.matricule }}</td>
+                <td>{{ agent_vaccin.prenom }}</td>
+                <td>{{ agent_vaccin.nom }}</td>
+                <td>{{ agent_vaccin.cin }}</td>
+                <td>{{ agent_vaccin.dateNais ? agent_vaccin.dateNais|date('Y-m-d') : '' }}</td>
+                <td>{{ agent_vaccin.dateNais ? agent_vaccin.createdAt|date('Y-m-d') : '' }}</td>                
+                <td>{{ agent_vaccin.codeEvax }}</td>
+                <td>
+                    <a href="{{ path('agent_vaccin_show', {'id': agent_vaccin.id}) }}">عرض</a>
+                    <a href="{{ path('agent_vaccin_edit', {'id': agent_vaccin.id}) }}">تحيين</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a style="float:right" class="btn btn-primary " href="{{ path('agent_vaccin_new') }}">إضافة </a>
+{% endblock %}

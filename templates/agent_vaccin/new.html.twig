@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AgentVaccin{% endblock %}
+
+{% block body %}
+    <h2 style="text-align: right;margin-right: 150px">إضافة ملقح</h2>
+    <br/>
+
+    {{ include('agent_vaccin/_form.html.twig') }}
+
+    <a href="{{ path('agent_vaccin_index') }}" style="float:right">قائمة الملقحين </a>
+    <!-- jQuery -->
+    <script src="{{ asset('vendors/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{ asset('vendors/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+
+
+    <script>
+
+
+        // iCheck
+        $(document).ready(function () {
+            $('#agent_vaccin_matricule').on( "blur", function (){
+                $("#agent_vaccin_prenom").val("رشاد");
+                $("#agent_vaccin_nom").val("بنخليفة");
+                $("#agent_vaccin_cin").val("04893613");
+                $("#agent_vaccin_date_nais").val("1981-04-16");
+            });
+
+        });
+    </script>
+{% endblock %}

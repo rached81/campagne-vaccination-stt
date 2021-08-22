@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AgentVaccin{% endblock %}
+
+{% block body %}
+{#    <h1>AgentVaccin</h1>#}
+
+    <table id="datatable-checkbox" class="table table-striped bulk_action table-bordered" style="width:100%;text-align: right"    >
+        <tbody>
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <td>{{ agent_vaccin.id }}</td>#}
+{#            </tr>#}
+            <tr>
+                <th>المعرف</th>
+                <td>{{ agent_vaccin.matricule }}</td>
+            </tr>
+            <tr>
+                <th>الإسم</th>
+                <td>{{ agent_vaccin.prenom }}</td>
+            </tr>
+            <tr>
+                <th>اللقب</th>
+                <td>{{ agent_vaccin.nom }}</td>
+            </tr>
+            <tr>
+                <th>ب.ت.و</th>
+                <td>{{ agent_vaccin.cin }}</td>
+            </tr>
+            <tr>
+                <th>تاريخ الولادة</th>
+                <td>{{ agent_vaccin.dateNais ? agent_vaccin.dateNais|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>تاريخ التلقيح</th>
+                <td>{{ agent_vaccin.createdAt ? agent_vaccin.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>رقم التسجيل EVAX</th>
+                <td>{{ agent_vaccin.codeEvax }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a style="margin-left: 20px;margin-right20px; float:right" class="btn btn-primary " href="{{ path('agent_vaccin_index') }}">قائمة المسجلين</a>
+
+    <a  style="float:right;  margin-left: 20px;margin-right20px; " class="btn btn-primary " href="{{ path('agent_vaccin_edit', {'id': agent_vaccin.id}) }}">تحيين</a>
+
+    {{ include('agent_vaccin/_delete_form.html.twig') }}
+{% endblock %}

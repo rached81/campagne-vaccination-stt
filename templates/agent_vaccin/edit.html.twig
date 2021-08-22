@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AgentVaccin{% endblock %}
+
+{% block body %}
+{#    <h1>Edit AgentVaccin</h1>#}
+
+    {{ include('agent_vaccin/_form.html.twig', {'button_label': 'تحيين'}) }}
+
+    <a href="{{ path('agent_vaccin_index') }}">قائمة الملقحين</a>
+
+    {{ include('agent_vaccin/_delete_form.html.twig') }}
+{% endblock %}

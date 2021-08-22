@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+          <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+   <!--  <title>Top navbar example for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-static/">
+
+    Bootstrap core CSS
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="navbar-top.css" rel="stylesheet"> -->
+    <!-- Bootstrap -->
+        <link href="{{ asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="{{ asset('vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="{{ asset('vendors/nprogress/nprogress.css')}}" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="{{ asset('vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+        <!-- bootstrap-wysiwyg -->
+        <link href="{{ asset('vendors/google-code-prettify/bin/prettify.min.css')}}" rel="stylesheet">
+        <!-- Select2 -->
+        <link href="{{ asset('vendors/select2/dist/css/select2.min.css')}}" rel="stylesheet">
+        <!-- bootstrap-progressbar -->
+        <link href="{{ asset('vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet">
+        <!-- JQVMap -->
+        <link href="{{ asset('vendors/jqvmap/dist/jqvmap.min.css')}}" rel="stylesheet"/>
+        <!-- bootstrap-daterangepicker -->
+        <link href="{{ asset('vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+        <!-- Switchery -->
+        <link href="{{ asset('vendors/switchery/dist/switchery.min.css')}}" rel="stylesheet">
+    {# beware that the blocks in your template may be named different #}
+{% block head_css %}
+    <!-- Copy CSS from https://getbootstrap.com/docs/4.4/getting-started/introduction/#css -->
+{% endblock %}
+{% block head_js %}
+    <!-- Copy JavaScript from https://getbootstrap.com/docs/4.4/getting-started/introduction/#js -->
+{% endblock %}
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#"> حملة تلقيح COVID-19  </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">قائمة الملقخين <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">إضافة</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron" dir="rtl">
+        {% block body %}{% endblock %}
+      </div>
+    </main>
+        
+
+         <!-- jQuery -->
+        <script src="{{ asset('vendors/jquery/dist/jquery.min.js')}}"></script>
+        <!-- Bootstrap -->
+        <script src="{{ asset('vendors/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+        <!-- FastClick -->
+{#        <script src="{{ asset('vendors/fastclick/lib/fastclick.js')}}"></script>#}
+{#        <!-- NProgress -->#}
+{#        <script src="{{ asset('vendors/nprogress/nprogress.js')}}"></script>#}
+{#        <!-- Chart.js')}} -->#}
+{#        <script src="{{ asset('vendors/Chart.js/dist/Chart.min.js')}}"></script>#}
+        <!-- gauge.js')}} -->
+        <script src="{{ asset('vendors/gauge.js/dist/gauge.min.js')}}"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="{{ asset('vendors/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script>
+{#        <!-- iCheck -->#}
+{#        <script src="{{ asset('vendors/iCheck/icheck.min.js')}}"></script>#}
+{#        <!-- Skycons -->#}
+{#        <script src="{{ asset('vendors/skycons/skycons.js')}}"></script>#}
+        <!-- Flot -->
+
+        <!-- DateJS -->
+        <script src="{{ asset('vendors/DateJS/build/date.js')}}"></script>
+        <!-- JQVMap -->
+        <!-- Select2 -->
+{#        <script src="{{ asset('vendors/select2/dist/js/select2.full.min.js')}}"></script>#}
+{#        <script src="{{ asset('vendors/jqvmap/dist/jquery.vmap.js')}}"></script>#}
+{#        <script src="{{ asset('vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>#}
+{#        <script src="{{ asset('vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>#}
+{#        <!-- bootstrap-daterangepicker -->#}
+{#        <script src="{{ asset('vendors/moment/min/moment.min.js')}}"></script>#}
+{#        <script src="{{ asset('vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>#}
+    </body>
+</html>
