@@ -20,10 +20,39 @@
         // iCheck
         $(document).ready(function () {
             $('#agent_vaccin_matricule').on( "blur", function (){
-                $("#agent_vaccin_prenom").val("رشاد");
-                $("#agent_vaccin_nom").val("بنخليفة");
-                $("#agent_vaccin_cin").val("04893613");
-                $("#agent_vaccin_date_nais").val("1981-04-16");
+               let mle =  $("#agent_vaccin_matricule").val();
+                let url = "http://10.0.2.2:8282/agent/" + mle;
+                $.ajax({
+                    url:   url,
+                    type:       'GET',
+                    // data: dataStatus,
+                    dataType:   'json',
+                    // async:      true,
+                    success: function(data, status) {
+
+                        console.log(data);
+                        if (data.length == 0) {
+
+                            alert('Matricule Inexistante !');
+
+                        } else {
+                            alert("c bien");
+                            $("#agent_vaccin_prenom").val(data[0].prenom);
+                            $("#agent_vaccin_nom").val(data[0].nom);
+                            $("#agent_vaccin_cin").val(data[0].ncin);
+                            $("#agent_vaccin_date_nais").val(data[0].datnais);
+
+                        }
+                         {#window.location.href = "{{ path('order_index')|escape('js') }}";#}
+                    },
+
+
+
+                    error: function(xhr, textStatus, errorThrown) {
+                        alert('Ajax request failed.');
+                    }
+                });
+
             });
 
         });
